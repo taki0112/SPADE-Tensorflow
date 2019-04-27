@@ -6,7 +6,6 @@ Simple Tensorflow implementation of ["Semantic Image Synthesis with Spatially-Ad
   <img src="./assets/teaser.png">
 </div>
 
----
 
 ## Usage
 ```
