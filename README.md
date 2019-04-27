@@ -1,11 +1,12 @@
 # Semantic Image Synthesis with SPADE - Tensorflow
 
+Simple Tensorflow implementation of ["Semantic Image Synthesis with Spatially-Adaptive Normalization"](https://arxiv.org/abs/1903.07291) (CVPR 2019 Oral)
+
 <div align="center">
   <img src="./assets/teaser.png">
 </div>
 
-Simple Tensorflow implementation of ["Semantic Image Synthesis with Spatially-Adaptive Normalization"](https://arxiv.org/abs/1903.07291) (CVPR 2019 Oral)
-
+---
 
 ## Usage
 ```
