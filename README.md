@@ -8,6 +8,9 @@ Simple Tensorflow implementation of ["Semantic Image Synthesis with Spatially-Ad
 
 ## Preparation
 * [vgg19.npy](https://mega.nz/#!xZ8glS6J!MAnE91ND_WyfZ_8mvkuSa2YcA7q-1ehfSm-Q1fxOvvs)
+* Image
+* Segmentation map
+  * Don't worry. I'll do one-hot encoding of segmentation map automatically.
 
 ## Usage
 ```
