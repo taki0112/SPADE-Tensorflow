@@ -39,7 +39,7 @@ Simple Tensorflow implementation of ["Semantic Image Synthesis with Spatially-Ad
 
 ### Guide test
 ```
-python main.py --dataset spade_cityscape --phase guide --guide_img ./guide_img.png
+> python main.py --dataset spade_cityscape --phase guide --guide_img ./guide_img.png
 ```
 
 ## Architecture
