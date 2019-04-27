@@ -1,4 +1,5 @@
 # Semantic Image Synthesis with SPADE - Tensorflow
+
 <div align="center">
   <img src="./assets/teaser.png">
 </div>
