@@ -1,5 +1,10 @@
 # Semantic Image Synthesis with SPADE - Tensorflow
+<div align="center">
+  <img src="./assets/teaser.png">
+</div>
+
 Simple Tensorflow implementation of ["Semantic Image Synthesis with Spatially-Adaptive Normalization"](https://arxiv.org/abs/1903.07291) (CVPR 2019 Oral)
+
 
 ## Usage
 ```
@@ -36,6 +41,19 @@ Simple Tensorflow implementation of ["Semantic Image Synthesis with Spatially-Ad
 ```
 python main.py --dataset spade_cityscape --phase guide --guide_img ./guide_img.png
 ```
+
+## Architecture
+*Generator* | *Image Encoder* | *Discriminator* | *All-in-one* |
+:---: | :---: | :---: | :---: |
+<img src = './assets/generator.png' width = '400px' height = '400px'> | <img src = './assets/image_encoder.png' width = '400px' height = '400px'> | <img src = './assets/discriminator.png' width = '350px' height = '350px'> | <img src = './assets/architecture.png' width = '400px' height = '400px'> |
+
+### SPADE architecture
+*SPADE* | *SPADE Residual Block* | 
+:---: | :---: |
+<img src = './assets/spade.png' width = '1000px' height = '400px'> | <img src = './assets/spade_resblock.png' width = '420px' height = '400px'> |
+
+## Results
+Soon
 
 ## Author
 Junho Kim
