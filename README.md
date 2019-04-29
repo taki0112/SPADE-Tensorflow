@@ -6,6 +6,8 @@ Simple Tensorflow implementation of ["Semantic Image Synthesis with Spatially-Ad
   <img src="./assets/teaser.png">
 </div>
 
+# The code will be released soon
+
 ## Preparation
 * [vgg19.npy](https://mega.nz/#!xZ8glS6J!MAnE91ND_WyfZ_8mvkuSa2YcA7q-1ehfSm-Q1fxOvvs)
 * Image
