@@ -1,6 +1,6 @@
 # Semantic Image Synthesis with SPADE - Tensorflow
 
-Simple Tensorflow implementation of ["Semantic Image Synthesis with Spatially-Adaptive Normalization"](https://arxiv.org/abs/1903.07291) (CVPR 2019 Oral)
+Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Adaptive Normalization" (CVPR 2019 Oral) | [paper]((https://arxiv.org/abs/1903.07291))
 
 <div align="center">
   <img src="./assets/teaser.png">
@@ -9,7 +9,6 @@ Simple Tensorflow implementation of ["Semantic Image Synthesis with Spatially-Ad
 # The code will be released soon
 
 ## Preparation
-* [vgg19.npy](https://mega.nz/#!xZ8glS6J!MAnE91ND_WyfZ_8mvkuSa2YcA7q-1ehfSm-Q1fxOvvs)
 * Image
 * Segmentation map
   * Don't worry. I do one-hot encoding of segmentation map automatically (whether color or gray).
@@ -37,17 +36,17 @@ Simple Tensorflow implementation of ["Semantic Image Synthesis with Spatially-Ad
 
 ### Train
 ```
-> python main.py --dataset spade_cityscape --phase train
+> python main.py --dataset spade_cityscape --img_ch 3 --segmap_ch 3 --phase train 
 ```
 
 ### Random test
 ```
-> python main.py --dataset spade_cityscape --phase random
+> python main.py --dataset spade_cityscape --segmap_ch 3 --phase random
 ```
 
 ### Guide test
 ```
-> python main.py --dataset spade_cityscape --phase guide --guide_img ./guide_img.png
+> python main.py --dataset spade_cityscape --img_ch 3 --segmap_ch 3 --phase guide --guide_img ./guide_img.png
 ```
 
 ## Architecture
