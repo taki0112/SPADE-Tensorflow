@@ -56,7 +56,7 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
 ### SPADE architecture
 *SPADE* | *SPADE Residual Block* | 
 :---: | :---: |
-<img src = './assets/spade.png' width = '1000px' height = '400px'> | <img src = './assets/spade_resblock.png' width = '420px' height = '400px'> |
+<img src = './assets/spade.png' width = '850px' height = '300px'> | <img src = './assets/spade_resblock.png' width = '500px' height = '400px'> |
 
 ## Our Results 
 ### CityScape
