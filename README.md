@@ -6,8 +6,6 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
   <img src="./assets/teaser.png">
 </div>
 
-# The code will be released soon
-
 ## Preparation
 * Image
 * Segmentation map
@@ -36,17 +34,17 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
 
 ### Train
 ```
-> python main.py --dataset spade_cityscape --img_ch 3 --segmap_ch 3 --phase train 
+> python main.py --dataset spade_celebA --img_ch 3 --segmap_ch 3 --phase train 
 ```
 
 ### Random test
 ```
-> python main.py --dataset spade_cityscape --segmap_ch 3 --phase random
+> python main.py --dataset spade_celebA --segmap_ch 3 --phase random
 ```
 
 ### Guide test
 ```
-> python main.py --dataset spade_cityscape --img_ch 3 --segmap_ch 3 --phase guide --guide_img ./guide_img.png
+> python main.py --dataset spade_celebA --img_ch 3 --segmap_ch 3 --phase guide --guide_img ./guide_img.png
 ```
 
 ## Architecture
@@ -59,7 +57,14 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
 :---: | :---: |
 <img src = './assets/spade.png' width = '1000px' height = '400px'> | <img src = './assets/spade_resblock.png' width = '420px' height = '400px'> |
 
-## Our Results
+# Our Results 
+
+## Hinge loss
+
+### CityScape
+<div align="center">
+  <img src="./assets/result_img/cityscape_hinge.png">
+</div>
 
 ### CelebA-HQ (Style Manipulation)
 <div align="center">
@@ -84,12 +89,29 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
   <img src="./assets/result_img/men_random_hinge.png">
 </div>
 
-
-### CityScape
+## Least Square loss
+### CelebA-HQ (Style Manipulation)
 <div align="center">
-  <img src="./assets/result_img/cityscape_hinge.png">
+  <img src="./assets/result_img/women_lsgan.png">
 </div>
 
+---
+
+<div align="center">
+  <img src="./assets/result_img/men_lsgan.png">
+</div>
+
+
+### CelebA-HQ (Random Manipulation)
+<div align="center">
+  <img src="./assets/result_img/women_random_lsgan.png">
+</div>
+
+---
+
+<div align="center">
+  <img src="./assets/result_img/men_random_lsgan.png">
+</div>
 
 ## Author
 Junho Kim
