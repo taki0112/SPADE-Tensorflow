@@ -311,7 +311,7 @@ class SPADE(object):
 
 
         img_and_segmap = tf.data.Dataset.from_tensor_slices((img_class.image, img_class.segmap))
-        img_and_segmap_test = tf.data.Dataset.from_tensor_slices(img_class.segmap_test)
+        segmap_test = tf.data.Dataset.from_tensor_slices(img_class.segmap_test)
 
 
         gpu_device = '/gpu:0'
@@ -319,16 +319,16 @@ class SPADE(object):
             map_and_batch(img_class.image_processing, self.batch_size, num_parallel_batches=16,
                           drop_remainder=True)).apply(prefetch_to_device(gpu_device, self.batch_size))
 
-        img_and_segmap_test = img_and_segmap_test.apply(shuffle_and_repeat(self.dataset_num)).apply(
+        segmap_test = segmap_test.apply(shuffle_and_repeat(self.dataset_num)).apply(
             map_and_batch(img_class.test_image_processing, batch_size=self.batch_size, num_parallel_batches=16,
                           drop_remainder=True)).apply(prefetch_to_device(gpu_device, self.batch_size))
 
 
         img_and_segmap_iterator = img_and_segmap.make_one_shot_iterator()
-        img_and_segmap_test_iterator = img_and_segmap_test.make_one_shot_iterator()
+        segmap_test_iterator = segmap_test.make_one_shot_iterator()
 
         self.real_x, self.real_x_segmap, self.real_x_segmap_onehot = img_and_segmap_iterator.get_next()
-        self.real_x_segmap_test, self.real_x_segmap_test_onehot = img_and_segmap_test_iterator.get_next()
+        self.real_x_segmap_test, self.real_x_segmap_test_onehot = segmap_test_iterator.get_next()
 
 
         """ Define Generator, Discriminator """
