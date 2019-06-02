@@ -3,7 +3,8 @@
 Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Adaptive Normalization" (CVPR 2019 Oral) | [paper](https://arxiv.org/abs/1903.07291)
 
 <div align="center">
-  <img src="./assets/teaser.png">
+  <img src="https://nvlabs.github.io/SPADE/images/treepond.gif">
+  <img src="https://nvlabs.github.io/SPADE/images/ocean.gif">
 </div>
 
 ## Preparation
