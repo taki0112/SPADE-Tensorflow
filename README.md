@@ -88,7 +88,7 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
   <img src="./assets/result_img/men_random_hinge.png">
 </div>
 
-## How about Least-Square loss ?
+## How about the Least-Square loss ?
 ### CelebA-HQ (Style Manipulation)
 <div align="center">
   <img src="./assets/result_img/women_lsgan.png">
