@@ -61,7 +61,7 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
 
 ## Our Results
 
-### CelebA-HQ 
+### CelebA-HQ (Style Manipulation)
 <div align="center">
   <img src="./assets/result_img/women_hinge.png">
 </div>
@@ -70,14 +70,20 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
   <img src="./assets/result_img/men_hinge.png">
 </div>
 
----
 
+### CelebA-HQ (Random Manipulation)
 <div align="center">
   <img src="./assets/result_img/women_random_hinge.png">
 </div>
 
 <div align="center">
   <img src="./assets/result_img/men_random_hinge.png">
+</div>
+
+
+### CityScape
+<div align="center">
+  <img src="./assets/result_img/cityscape_hinge.png">
 </div>
 
 
