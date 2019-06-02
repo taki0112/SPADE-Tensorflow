@@ -59,8 +59,27 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
 :---: | :---: |
 <img src = './assets/spade.png' width = '1000px' height = '400px'> | <img src = './assets/spade_resblock.png' width = '420px' height = '400px'> |
 
-## Results
-Soon
+## Our Results
+
+### CelebA-HQ 
+<div align="center">
+  <img src="./assets/result_img/women_hinge.png">
+</div>
+
+<div align="center">
+  <img src="./assets/result_img/men_hinge.png">
+</div>
+
+---
+
+<div align="center">
+  <img src="./assets/result_img/women_random_hinge.png">
+</div>
+
+<div align="center">
+  <img src="./assets/result_img/men_random_hinge.png">
+</div>
+
 
 ## Author
 Junho Kim
