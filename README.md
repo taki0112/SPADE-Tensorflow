@@ -61,6 +61,11 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
 :---: | :---: |
 <img src = './assets/spade.png' width = '850px' height = '300px'> | <img src = './assets/spade_resblock.png' width = '500px' height = '400px'> |
 
+### Loss grpah
+<div align="center">
+  <img src="./assets/loss.png">
+</div>
+
 ## Our Results 
 ### CityScape
 <div align="center">
