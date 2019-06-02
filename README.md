@@ -7,7 +7,7 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
   <img src="https://nvlabs.github.io/SPADE/images/ocean.gif">
 </div>
 
-### [Project page](https://nvlabs.github.io/SPADE/) | [Paper](https://arxiv.org/abs/1903.07291) | [Author pytorch code](https://github.com/NVlabs/SPADE)
+### [Project page](https://nvlabs.github.io/SPADE/) | [Paper](https://arxiv.org/abs/1903.07291) | [Pytorch code](https://github.com/NVlabs/SPADE)
  
 ## Preparation
 * Image
