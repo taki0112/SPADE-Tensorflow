@@ -22,8 +22,8 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
            ├── 000002.png
            └── ...
        ├── segmap
-           ├── 000001_segmap.jpg
-           ├── 000002_segmap.png
+           ├── 000001.jpg
+           ├── 000002.png
            └── ...
        ├── segmap_test
            ├── a.jpg 
@@ -66,6 +66,8 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
   <img src="./assets/result_img/women_hinge.png">
 </div>
 
+---
+
 <div align="center">
   <img src="./assets/result_img/men_hinge.png">
 </div>
@@ -75,6 +77,8 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
 <div align="center">
   <img src="./assets/result_img/women_random_hinge.png">
 </div>
+
+---
 
 <div align="center">
   <img src="./assets/result_img/men_random_hinge.png">
