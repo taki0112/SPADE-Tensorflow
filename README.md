@@ -57,10 +57,7 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
 :---: | :---: |
 <img src = './assets/spade.png' width = '1000px' height = '400px'> | <img src = './assets/spade_resblock.png' width = '420px' height = '400px'> |
 
-# Our Results 
-
-## Hinge loss
-
+## Our Results 
 ### CityScape
 <div align="center">
   <img src="./assets/result_img/cityscape_hinge.png">
@@ -89,7 +86,7 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
   <img src="./assets/result_img/men_random_hinge.png">
 </div>
 
-## Least Square loss
+## How about Least-Square loss ?
 ### CelebA-HQ (Style Manipulation)
 <div align="center">
   <img src="./assets/result_img/women_lsgan.png">
