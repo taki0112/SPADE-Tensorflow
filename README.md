@@ -1,4 +1,4 @@
-# Semantic Image Synthesis with SPADE - Tensorflow
+# Semantic Image Synthesis with SPADE (GauGAN) - Tensorflow
 
 Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Adaptive Normalization" (CVPR 2019 Oral) | [paper](https://arxiv.org/abs/1903.07291)
 
