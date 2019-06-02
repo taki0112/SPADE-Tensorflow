@@ -113,4 +113,4 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
 </div>
 
 ## Author
-Junho Kim
+[Junho Kim](bit.ly/jhkim_ai)
