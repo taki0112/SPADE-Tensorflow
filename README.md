@@ -1,6 +1,6 @@
 # Semantic Image Synthesis with SPADE (GauGAN) - Tensorflow
 
-Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Adaptive Normalization" (CVPR 2019 Oral) | [paper](https://arxiv.org/abs/1903.07291)
+Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Adaptive Normalization" (CVPR 2019 Oral) | [Paper](https://arxiv.org/abs/1903.07291) | [Author pytorch code](https://github.com/NVlabs/SPADE)
 
 <div align="center">
   <img src="https://nvlabs.github.io/SPADE/images/treepond.gif">
