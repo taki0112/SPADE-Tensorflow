@@ -226,63 +226,6 @@ def spade(segmap, x_init, channels, use_bias=True, sn=False, scope='spade') :
 
         return x
 
-
-def spade_resblock_weird(segmap, x_init, channels, use_bias=True, sn=False, scope='spade_resblock'):
-    _, x_h, x_w, channel_init = x_init.get_shape().as_list()
-    _, segmap_h, segmap_w, _ = segmap.get_shape().as_list()
-
-    factor_h = segmap_h // x_h # 256 // 4 = 64
-    factor_w = segmap_w // x_w
-
-    segmap_down = down_sample(segmap, factor_h, factor_w)
-
-    with tf.variable_scope(scope) :
-        with tf.variable_scope('spade_1') :
-            segmap_down = partial_conv(segmap_down, channels=128, kernel=5, stride=1, use_bias=use_bias, sn=sn, scope='conv_128')
-            segmap_down = relu(segmap_down)
-
-            if channels != channel_init:
-                segmap_gamma = partial_conv(segmap_down, channels=channel_init, kernel=5, stride=1, use_bias=use_bias, sn=sn, scope='conv_gamma')
-                segmap_beta = partial_conv(segmap_down, channels=channel_init, kernel=5, stride=1, use_bias=use_bias, sn=sn, scope='conv_beta')
-            else :
-                segmap_gamma = partial_conv(segmap_down, channels=channels, kernel=5, stride=1, use_bias=use_bias, sn=sn, scope='conv_gamma')
-                segmap_beta = partial_conv(segmap_down, channels=channels, kernel=5, stride=1, use_bias=use_bias, sn=sn, scope='conv_beta')
-
-            x = param_free_norm(x_init)
-            x = segmap_gamma * x + segmap_beta
-
-            x = relu(x)
-            x = partial_conv(x, channels=channels, kernel=5, stride=1, use_bias=use_bias, sn=sn, scope='conv_x')
-
-        with tf.variable_scope('spade_2') :
-            segmap_down = partial_conv(segmap_down, channels=128, kernel=5, stride=1, use_bias=use_bias, sn=sn, scope='conv_128')
-            segmap_down = relu(segmap_down)
-
-            segmap_gamma = partial_conv(segmap_down, channels=channels, kernel=5, stride=1, use_bias=use_bias, sn=sn, scope='conv_gamma')
-            segmap_beta = partial_conv(segmap_down, channels=channels, kernel=5, stride=1, use_bias=use_bias, sn=sn, scope='conv_beta')
-
-            x = param_free_norm(x)
-            x = segmap_gamma * x + segmap_beta
-
-            x = relu(x)
-            x = partial_conv(x, channels=channels, kernel=5, stride=1, use_bias=use_bias, sn=sn, scope='conv_x')
-
-        if channels != channel_init :
-            with tf.variable_scope('skip_spade') :
-                segmap_down = partial_conv(segmap_down, channels=128, kernel=5, stride=1, use_bias=use_bias, sn=sn, scope='conv_128')
-                segmap_down = relu(segmap_down)
-
-                segmap_gamma = partial_conv(segmap_down, channels=channel_init, kernel=5, stride=1, use_bias=use_bias, sn=sn, scope='conv_gamma')
-                segmap_beta = partial_conv(segmap_down, channels=channel_init, kernel=5, stride=1, use_bias=use_bias, sn=sn, scope='conv_beta')
-
-                x_init = param_free_norm(x_init)
-                x_init = segmap_gamma * x_init + segmap_beta
-
-                # x_init = relu(x_init)
-                x_init = partial_conv(x_init, channels=channels, kernel=1, stride=1, use_bias=False, sn=sn, scope='conv_x')
-
-        return x_init + x
-
 def param_free_norm(x, epsilon=1e-5) :
     x_mean, x_var = tf.nn.moments(x, axes=[1, 2], keep_dims=True)
     x_std = tf.sqrt(x_var + epsilon)
@@ -430,25 +373,6 @@ def generator_loss(loss_func, fake):
         loss.append(fake_loss)
 
     return tf.reduce_mean(loss)
-
-def vgg_loss(vgg, real, fake) :
-    loss = 0
-    weights = [1.0 / 32, 1.0 / 16, 1.0 / 8, 1.0 / 4, 1.0]
-
-    real_vgg = vgg(real)
-    fake_vgg = vgg(fake)
-
-    # vgg.build(real)
-    # real_feature_map = [vgg.conv1_1, vgg.conv2_1, vgg.conv3_1, vgg.conv4_1, vgg.conv5_1]
-    #
-    # vgg.build(fake)
-    # fake_feature_map = [vgg.conv1_1, vgg.conv2_1, vgg.conv3_1, vgg.conv4_1, vgg.conv5_1]
-
-    for i in range(len(real_vgg)) :
-        fake_vgg_stop_grad = tf.stop_gradient(fake_vgg[i])
-        loss += weights[i] * L1_loss(real_vgg[i], fake_vgg_stop_grad)
-
-    return loss
 
 def feature_loss(real, fake) :
 
