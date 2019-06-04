@@ -10,10 +10,13 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
 ### [Project page](https://nvlabs.github.io/SPADE/) | [Paper](https://arxiv.org/abs/1903.07291) | [Pytorch code](https://github.com/NVlabs/SPADE)
  
 ## Preparation
-* Image
-* Segmentation map
-  * Don't worry. I do one-hot encoding of segmentation map automatically (whether color or gray)
-* Download [**CelebAMask-HQ**](https://github.com/switchablenorms/CelebAMask-HQ)
+* **YOUR DATASET**
+  * Image
+  * Segmentation map
+    * Don't worry. I do one-hot encoding of segmentation map automatically (whether color or gray)
+* **CelebAMask-HQ**
+  * Download [**CelebAMask-HQ**](https://github.com/switchablenorms/CelebAMask-HQ)
+    * The original was taken from [here](https://github.com/switchablenorms/CelebAMask-HQ) and pre-processed by Junho-Kim
 
 ## Usage
 ```
