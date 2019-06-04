@@ -51,6 +51,9 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
 > python main.py --dataset spade_celebA --img_ch 3 --segmap_ch 3 --phase guide --guide_img ./guide_img.png
 ```
 
+### Pretrained model
+* Download [CelebAMask-HQ](https://drive.google.com/file/d/1h_L3L2yuOh_RQ3vBA24DlgrBABblIIo9/view?usp=sharing)
+
 ## Our Results 
 
 ### Loss grpah
