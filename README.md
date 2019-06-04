@@ -12,7 +12,8 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
 ## Preparation
 * Image
 * Segmentation map
-  * Don't worry. I do one-hot encoding of segmentation map automatically (whether color or gray).
+  * Don't worry. I do one-hot encoding of segmentation map automatically (whether color or gray)
+* Download [**CelebAMask-HQ**](https://github.com/switchablenorms/CelebAMask-HQ)
 
 ## Usage
 ```
@@ -34,7 +35,6 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
        
 ├── guide.jpg (example for guided image translation task)
 ```
-* Download [**CelebAMask-HQ**](https://github.com/switchablenorms/CelebAMask-HQ)
 
 ### Train
 ```
