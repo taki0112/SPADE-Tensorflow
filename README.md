@@ -34,7 +34,7 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
        
 ├── guide.jpg (example for guided image translation task)
 ```
-* **[CelebAMask-HQ](https://github.com/switchablenorms/CelebAMask-HQ)**
+* Download [**CelebAMask-HQ**](https://github.com/switchablenorms/CelebAMask-HQ)
 
 ### Train
 ```
