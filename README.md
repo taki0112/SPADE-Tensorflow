@@ -15,7 +15,7 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
   * Segmentation map
     * Don't worry. I do one-hot encoding of segmentation map automatically (whether color or gray)
 * **CelebAMask-HQ**
-  * Download [**CelebAMask-HQ**](https://github.com/switchablenorms/CelebAMask-HQ)
+  * Download [**CelebAMask-HQ**](https://drive.google.com/file/d/1ybGz_7uMOjMpAySIA5j3nJSKSwyhSQO0/view?usp=sharing)
     * The original was taken from [here](https://github.com/switchablenorms/CelebAMask-HQ) and pre-processed by Junho-Kim
 
 ## Usage
