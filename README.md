@@ -53,7 +53,8 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
 
 ### Pretrained model
 * Download [CelebAMask-HQ](https://drive.google.com/file/d/1h_L3L2yuOh_RQ3vBA24DlgrBABblIIo9/view?usp=sharing)
-
+  * default parameter in `main.py`
+  
 ## Our Results 
 
 ### Loss grpah
