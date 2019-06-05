@@ -8,6 +8,16 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
 </div>
 
 ### [Project page](https://nvlabs.github.io/SPADE/) | [Paper](https://arxiv.org/abs/1903.07291) | [Pytorch code](https://github.com/NVlabs/SPADE)
+
+## Requirements
+* scipy == 1.2.0
+  * The latest version is not available. `imsave` is deprecated.
+* tqdm
+* numpy
+* pillow
+* opencv-python
+* tensorflow-gpu
+* keras
  
 ## Preparation
 * **YOUR DATASET**
