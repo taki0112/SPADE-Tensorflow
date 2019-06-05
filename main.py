@@ -34,7 +34,7 @@ def parse_args():
     parser.add_argument('--gan_type', type=str, default='hinge', help='gan / lsgan / hinge / wgan-gp / wgan-lp / dragan')
     parser.add_argument('--ch', type=int, default=64, help='base channel number per layer')
 
-    parser.add_argument('--n_dis', type=int, default=3, help='The number of discriminator layer')
+    parser.add_argument('--n_dis', type=int, default=4, help='The number of discriminator layer')
     parser.add_argument('--n_scale', type=int, default=2, help='number of scales')
     parser.add_argument('--n_critic', type=int, default=1, help='The number of critic')
     parser.add_argument('--sn', type=str2bool, default=True, help='using spectral norm')

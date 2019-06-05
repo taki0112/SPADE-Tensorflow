@@ -221,7 +221,9 @@ class SPADE(object):
                 feature_loss.append(x)
 
                 for i in range(1, self.n_dis):
-                    x = conv(x, channel * 2, kernel=4, stride=2, pad=1, use_bias=True, sn=self.sn, scope='ms_' + str(scale) + 'conv_' + str(i))
+                    stride = 1 if i == self.n_dis - 1 else 2
+
+                    x = conv(x, channel * 2, kernel=4, stride=stride, pad=1, use_bias=True, sn=self.sn, scope='ms_' + str(scale) + 'conv_' + str(i))
                     x = instance_norm(x, scope='ms_' + str(scale) + 'ins_norm_' + str(i))
                     x = lrelu(x, 0.2)
 
@@ -229,11 +231,6 @@ class SPADE(object):
 
                     channel = min(channel * 2, 512)
 
-                # x = conv(x, channel * 2, kernel=4, stride=1, pad=1, use_bias=True, sn=self.sn, scope='ms_' + str(scale) + 'conv_' + str(self.n_dis))
-                # x = instance_norm(x, scope='ms_' + str(scale) + 'ins_norm_' + str(self.n_dis))
-                # x = lrelu(x, 0.2)
-                #
-                # feature_loss.append(x)
 
                 x = conv(x, channels=1, kernel=4, stride=1, pad=1, use_bias=True, sn=self.sn, scope='ms_' + str(scale) + 'D_logit')
 
