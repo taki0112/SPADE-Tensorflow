@@ -30,7 +30,7 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
     
 ### Pretrained model
 * Will be soon
-  * The pytoch autor has changed the network architecture. So I'm re-training again.
+  * The pytoch author has changed the [network architecture](https://github.com/NVlabs/SPADE/commit/c0d50e6c4c106c0e88974f445f435b8ba5f4ccf6). So I'm re-training again.
 
 
 ## Usage
