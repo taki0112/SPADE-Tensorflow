@@ -30,7 +30,7 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
     
 ### Pretrained model
 * Will be soon
-  * default parameter in `main.py`
+  * The pytoch autor has changed the network architecture. So I'm re-training again.
 
 
 ## Usage
