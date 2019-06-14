@@ -30,6 +30,7 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
     
 ### Pretrained model
 * Download [**checkpoint**](https://drive.google.com/file/d/1UIj7eRJeNWrDS-3odyaoLhcqk0tNcEez/view?usp=sharing)
+  * CelebAMask-HQ, hinge loss
 
 
 ## Usage
