@@ -140,15 +140,14 @@ class SPADE(object):
 
             mean = fully_connected(x, channel // 2, use_bias=True, sn=self.sn, scope='linear_mean')
             var = fully_connected(x, channel // 2, use_bias=True, sn=self.sn, scope='linear_var')
-
             return mean, var
 
     def generator(self, segmap, x_mean, x_var, random_style=False, reuse=False, scope="generator"):
         channel = self.ch * 4 * 4
         with tf.variable_scope(scope, reuse=reuse):
-
+            batch_size = segmap.get_shape().as_list()[0]
             if random_style :
-                x = tf.random_normal(shape=[self.batch_size, self.ch * 4])
+                x = tf.random_normal(shape=[batch_size, self.ch * 4])
             else :
                 x = z_sample(x_mean, x_var)
 
@@ -173,7 +172,7 @@ class SPADE(object):
             """
 
             x = fully_connected(x, units=z_height * z_width * channel, use_bias=True, sn=False, scope='linear_x')
-            x = tf.reshape(x, [self.batch_size, z_height, z_width, channel])
+            x = tf.reshape(x, [batch_size, z_height, z_width, channel])
 
 
             x = spade_resblock(segmap, x, channels=channel, use_bias=True, sn=self.sn, scope='spade_resblock_fix_0')
