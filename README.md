@@ -31,6 +31,8 @@ Simple Tensorflow implementation of "Semantic Image Synthesis with Spatially-Ada
 * Download [**checkpoint**](https://drive.google.com/file/d/1UIj7eRJeNWrDS-3odyaoLhcqk0tNcEez/view?usp=sharing)
   * CelebAMask-HQ, hinge loss
   * It is a **better performance** than the results in the `READEME`
+  * `segmap_label.txt` for CelebAMask-HQ
+    * {(0, 0, 0): 0, (0, 0, 255): 1, (255, 0, 0): 2, (150, 30, 150): 3, (255, 65, 255): 4, (150, 80, 0): 5, (170, 120, 65): 6, (125, 125, 125): 7, (255, 255, 0): 8, (0, 255, 255): 9, (255, 150, 0): 10, (255, 225, 120): 11, (255, 125, 125): 12, (200, 100, 100): 13, (0, 255, 0): 14, (0, 150, 80): 15, (215, 175, 125): 16, (220, 180, 210): 17, (125, 125, 255): 18}
 
 ## Usage
 ```
