@@ -1,7 +1,8 @@
 from ops import *
 from utils import *
 import time
-from tensorflow.contrib.data import prefetch_to_device, shuffle_and_repeat, map_and_batch
+from tensorflow.data.experimental import prefetch_to_device, shuffle_and_repeat, map_and_batch
+#from tensorflow.contrib.data import prefetch_to_device, shuffle_and_repeat, map_and_batch
 import numpy as np
 from tqdm import tqdm
 from vgg19_keras import VGGLoss
