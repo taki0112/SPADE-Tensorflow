@@ -1,5 +1,6 @@
-import tensorflow as tf
-from tensorflow.contrib import slim
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+# from tensorflow.contrib import slim
 from scipy import misc
 import os, random
 import numpy as np
@@ -208,9 +209,9 @@ def merge(images, size):
 
     return img
 
-def show_all_variables():
-    model_vars = tf.trainable_variables()
-    slim.model_analyzer.analyze_vars(model_vars, print_info=True)
+# def show_all_variables():
+#     model_vars = tf.trainable_variables()
+#     slim.model_analyzer.analyze_vars(model_vars, print_info=True)
 
 def check_folder(log_dir):
     if not os.path.exists(log_dir):

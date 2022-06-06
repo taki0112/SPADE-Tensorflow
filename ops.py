@@ -1,5 +1,6 @@
-import tensorflow as tf
-import tensorflow.contrib as tf_contrib
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+#import tensorflow.contrib as tf_contrib
 from utils import pytorch_xavier_weight_factor, pytorch_kaiming_weight_factor
 
 ##################################################################################
@@ -42,7 +43,12 @@ tensorflow  : trunc_stddev = sqrt(1.3 * factor * 2 / (fan_in + fan_out))
 """
 
 factor, mode, uniform = pytorch_xavier_weight_factor(gain=0.02, uniform=False)
-weight_init = tf_contrib.layers.variance_scaling_initializer(factor=factor, mode=mode, uniform=uniform)
+#weight_init = tf_contrib.layers.variance_scaling_initializer(factor=factor, mode=mode, uniform=uniform)
+if uniform:
+    distribution="uniform"
+else:
+    distribution="truncated_normal"
+weight_init = tf.variance_scaling_initializer(scale=factor, mode=mode.lower(), distribution=distribution)
 # tf.truncated_normal_initializer(mean=0.0, stddev=0.02)
 
 weight_regularizer = None
@@ -275,10 +281,18 @@ def tanh(x):
 ##################################################################################
 
 def instance_norm(x, scope='instance_norm'):
-    return tf_contrib.layers.instance_norm(x,
-                                           epsilon=1e-05,
-                                           center=True, scale=True,
-                                           scope=scope)
+    # return tf_contrib.layers.instance_norm(x,
+    #                                        epsilon=1e-05,
+    #                                        center=True, scale=True,
+    #                                        scope=scope)
+    # return tfa.layers.InstanceNormalization(
+    #     x,
+    #     epsilon=1e-05,
+    #     center=True, scale=True,
+    #     scope=scope)
+    return tf.keras.layers.LayerNormalization(
+        epsilon=1e-05,
+        center=True, scale=True)(x)
 
 def spectral_norm(w, iteration=1):
     w_shape = w.shape.as_list()

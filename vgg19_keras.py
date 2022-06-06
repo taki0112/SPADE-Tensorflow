@@ -1,4 +1,5 @@
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 from keras.applications.vgg19 import preprocess_input
 from ops import L1_loss
 
